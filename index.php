@@ -1,6 +1,6 @@
 <?php
 
-// Fase di preparazione
+require_once __DIR__ . '/classes/Product.php';
 
 // Variabili
 // Strutture dati
