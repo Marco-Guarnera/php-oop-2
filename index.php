@@ -1,13 +1,16 @@
 <?php
 
-require_once __DIR__ . '/classes/Product.php';
+require_once __DIR__ . '/classes/Food.php';
 
-// Variabili
-// Strutture dati
-// Funzioni
+// Instances
 
-// Fase di raccolta dati
-// Fase di elaborazione
+$example_food_01 = new Food('img/placeholder.png', 'Example 01', 'Description', 0, new Section('icon', 'Example'), 0);
+$example_food_02 = new Food('img/placeholder.png', 'Example 02', 'Description', 0, new Section('icon', 'Example'), 0);
+$example_food_03 = new Food('img/placeholder.png', 'Example 03', 'Description', 0, new Section('icon', 'Example'), 0);
+$example_food_04 = new Food('img/placeholder.png', 'Example 04', 'Description', 0, new Section('icon', 'Example'), 0);
+
+// Struttura dati
+$foodsList = [$example_food_01, $example_food_02, $example_food_03, $example_food_04];
 
 ?>
 
@@ -33,7 +36,24 @@ require_once __DIR__ . '/classes/Product.php';
         <h1 class="text-center">PHP OOP</h1>
     </header>
     <!-- Main -->
-    <main></main>
+    <main>
+        <div class="container-fluid">
+            <div class="row">
+                <?php foreach ($foodsList as $food) { ?>
+                    <div class="col-3">
+                        <div class="card mb-3">
+                            <img class="card-img-top" src="<?= $food->img_src ?>" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title mb-1"><?= $food->name ?></h5>
+                                <p class="card-text mb-2"><?= $food->description ?></p>
+                                <span class="card-text"><?= $food->price . '$' ?></span>
+                            </div>
+                        </div>
+                    </div>
+                <?php } ?>
+            </div>
+        </div>
+    </main>
 </body>
 
 </html>
@@ -41,5 +61,6 @@ require_once __DIR__ . '/classes/Product.php';
 <?php
 
 // Fase di produzione
+var_dump($foodsList);
 
 ?>
