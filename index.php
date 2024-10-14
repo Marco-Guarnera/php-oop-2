@@ -4,13 +4,12 @@ require_once __DIR__ . '/classes/Food.php';
 
 // Instances
 
-$example_food_01 = new Food('img/placeholder.png', 'Example 01', 'Description', 0, new Section('icon', 'Example'), 0);
-$example_food_02 = new Food('img/placeholder.png', 'Example 02', 'Description', 0, new Section('icon', 'Example'), 0);
-$example_food_03 = new Food('img/placeholder.png', 'Example 03', 'Description', 0, new Section('icon', 'Example'), 0);
-$example_food_04 = new Food('img/placeholder.png', 'Example 04', 'Description', 0, new Section('icon', 'Example'), 0);
+$example_section_01 = new Section('icon', 'Example 01');
+
+$example_food_01 = new Food('img/placeholder.png', 'Example 01', 'Description', 0, $example_section_01, 0);
 
 // Struttura dati
-$foodsList = [$example_food_01, $example_food_02, $example_food_03, $example_food_04];
+$productsList = [$example_food_01];
 
 ?>
 
@@ -39,14 +38,14 @@ $foodsList = [$example_food_01, $example_food_02, $example_food_03, $example_foo
     <main>
         <div class="container-fluid">
             <div class="row">
-                <?php foreach ($foodsList as $food) { ?>
-                    <div class="col-3">
+                <?php foreach ($productsList as $product) { ?>
+                    <div class="col-2">
                         <div class="card mb-3">
-                            <img class="card-img-top" src="<?= $food->img_src ?>" alt="...">
+                            <img class="card-img-top" src="<?= $product->img_src ?>" alt="...">
                             <div class="card-body">
-                                <h5 class="card-title mb-1"><?= $food->name ?></h5>
-                                <p class="card-text mb-2"><?= $food->description ?></p>
-                                <span class="card-text"><?= $food->price . '$' ?></span>
+                                <h5 class="card-title mb-1"><?= $product->name ?></h5>
+                                <p class="card-text mb-2"><?= $product->description ?></p>
+                                <span class="card-text"><?= $product->price . '$' ?></span>
                             </div>
                         </div>
                     </div>
@@ -61,6 +60,6 @@ $foodsList = [$example_food_01, $example_food_02, $example_food_03, $example_foo
 <?php
 
 // Fase di produzione
-var_dump($foodsList);
+var_dump($productsList);
 
 ?>
