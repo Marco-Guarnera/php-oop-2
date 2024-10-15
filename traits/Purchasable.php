@@ -16,6 +16,7 @@ trait Purchasable {
             return $this->price * $quantity;
         } else {
             $this->available = false;
+            throw new Exception('Not available.');
         }
     }
 }

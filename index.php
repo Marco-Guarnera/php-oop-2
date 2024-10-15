@@ -59,7 +59,14 @@ $productsList = [$example_food_01];
 
 <?php
 
+try {
+    $example_food_01->purchase(2);
+} catch(Exception $e) {
+   echo $e->getMessage();
+}
+
 // Fase di produzione
 var_dump($productsList);
+
 
 ?>
