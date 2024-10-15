@@ -6,7 +6,7 @@ require_once __DIR__ . '/classes/Food.php';
 
 $example_section_01 = new Section('icon', 'Example 01');
 
-$example_food_01 = new Food('img/placeholder.png', 'Example 01', 'Description', 0, $example_section_01, 0);
+$example_food_01 = new Food('img/placeholder.png', 'Example 01', 'Description', 0, 1, $example_section_01, 0);
 
 // Struttura dati
 $productsList = [$example_food_01];
